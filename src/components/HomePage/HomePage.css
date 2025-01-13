@@ -1,0 +1,177 @@
+.landingpage {
+    height: 100vh;
+    background-color: #E8F0FE;
+}
+
+.hero{
+    width: 100%;
+}
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 89vh;
+    overflow: hidden;
+}
+
+
+.background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    z-index: 2;
+    padding: 20px;
+}
+
+.text{
+    width: 50%;
+}
+
+.video-overlay h1 {
+    font-size: 5rem;
+    margin-bottom: 20px;
+    font-family: "Smooch Sans", serif;
+}
+
+.video-overlay p {
+    font-size: 1.5rem;
+    font-family: "Smooch Sans", serif;
+    max-width: 600px;
+    line-height: 1.5;
+}
+
+
+.About-section{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.CA-profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('c:/Users/user/Desktop/CA Site/react-app/src/components/Assets/CA-profile.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 60%;
+    border-radius: 10px;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+}
+
+
+.CA-achievement{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;  
+}
+
+.head-achieve{
+    width: 100%;
+    height: 15vh;
+}
+
+.head-achieve h1{
+    font-size:5rem;
+}
+
+.head-achieve p{
+    font-size:2rem;
+}
+
+.list-achievements {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    width: 250px;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card-overlay h2 {
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: "Smooch Sans", serif;
+}
+
+.card:hover .card-overlay {
+    opacity: 1;
+}
+
+
+.service-section{
+    height: 120vh;
+    background-color: #E8F0FE;
+    display: flex;
+    flex-direction: column ;
+    align-items:center;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .video-overlay h1 {
+        font-size: 2rem;
+    }
+
+    .video-overlay p {
+        font-size: 1rem;
+    }
+}
