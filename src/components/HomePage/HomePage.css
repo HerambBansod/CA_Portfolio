@@ -72,7 +72,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url('c:/Users/user/Desktop/CA Site/react-app/src/components/Assets/CA-profile.png');
+    background-image: url('../Assets/CA-profile.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
