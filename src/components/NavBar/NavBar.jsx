@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "../NavBar/NavBar.css";
+import "../NavBar/NavBar.css"
 
 export default function Header() {
     const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -10,34 +10,51 @@ export default function Header() {
     };
 
     return (
-        <div className="NavBar">
-            <div className="logo">
-                {/* <img src={logo} alt="logo_here" /> */}
-            </div>
-            <div className="menu">
-                <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/About">About Us</Link></li>
-                    <li 
-                        className="dropdown" 
-                        onMouseEnter={toggleDropdown} 
-                        onMouseLeave={toggleDropdown}
-                    >
-                        <Link to="/Service">
-                            Services 
-                            <span className="dropdown-icon">▼</span>
-                        </Link>
-                        {dropdownOpen && (
+        <nav className="navbar navbar-expand-lg bg-body-tertiary">
+            <div className="container-fluid">
+                <Link className="navbar-brand" to="/">FirmName</Link>
+                <button
+                    className="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li className="nav-item">
+                            <Link className="nav-link" aria-current="page" to="/">Home</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/about-us">About Us</Link>
+                        </li>
+                        <li className="nav-item dropdown">
+                            <a
+                                className="nav-link dropdown-toggle"
+                                href="#"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                            >
+                                Services
+                            </a>
                             <ul className="dropdown-menu">
-                                <li><Link to="/business-services">Business Services</Link></li>
+                                <li><Link className="dropdown-item" to="/services/personal">Personal Service</Link></li>
+                                <li><Link className="dropdown-item" to="/services/business">Business Service</Link></li>
                             </ul>
-                        )}
-                    </li>
-                </ul>
+                        </li>
+                    </ul>
+                    <div className="d-flex">
+                        <Link className="btn btn-outline-success contact-us-btn" to="/contact-us">
+                            Contact Us
+                        </Link>
+                    </div>
+                </div>
             </div>
-            <div className="profile">
-                <Link to="/contact" className="Btn">Contact Us</Link>
-            </div>
-        </div>
+        </nav>
     );
 }

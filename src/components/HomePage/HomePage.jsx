@@ -3,15 +3,17 @@ import { Link } from "react-router-dom";
 import "./HomePage.css"
 import Section from './Section';
 import NavBar from '../NavBar/NavBar'
+import ContactPageHp from '../Contact-form-HP/ContactPageHp';
 import LandingVideo from '../Assets/LandingVideo.mp4';
-import img from '../Assets/img.jpg'
+import Footer from '../Footer/Footer';
+
 
 
 export default function HomePage() {
     return (
         <div className="home">
             <div className="landingpage">
-                <div className="navbar">
+                <div className="navindex">
                     <NavBar />
                 </div>
                 <div className="hero">
@@ -31,7 +33,7 @@ export default function HomePage() {
             </div>
             <div className="About-section">
                 <div className="CA-profile">
-    
+
                 </div>
                 <div className="CA-achievement">
                     <div className="head-achieve">
@@ -39,7 +41,7 @@ export default function HomePage() {
                         <p> Celebrating Milestones and Success Stories </p>
                     </div>
                     <div className="list-achievements">
-                        {[
+                        {/* {[
                             { title: "Award 1", img },
                             { title: "Award 2", img },
                             { title: "Award 3", img },
@@ -54,15 +56,26 @@ export default function HomePage() {
                                     <h2>{achievement.title}</h2>
                                 </div>
                             </div>
-                        ))}
+                        ))} */}
                     </div>
                 </div>
             </div>
             <div className="service-section">
-                <Section/>
+                <Section />
             </div>
             <div className="contactus">
-                
+                <div className="contact-form-section">
+                    <div className="header-contact-section">
+                        <h1>Contact</h1>
+                        <p>Lets Us know if you any question!?</p>
+                    </div>
+                    <div className="contact-form">
+                        <ContactPageHp />
+                    </div>
+                </div>
+            </div>
+            <div>
+                <Footer/>
             </div>
         </div>
     )
