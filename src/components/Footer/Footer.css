@@ -75,20 +75,48 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
     border: 1px solid #e2e2eb;
     font-size: 24px;
 }
+.f_social_icon {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
 .f_social_icon a {
     width: 46px;
     height: 46px;
     border-radius: 50%;
     font-size: 14px;
-    line-height: 45px;
+    line-height: 46px; /* Ensure the line height matches the height to center the icon */
     color: #858da8;
-    display: inline-block;
+    display: inline-flex;
     background: #ebeef5;
-    text-align: center;
-    -webkit-transition: all 0.2s linear;
-    -o-transition: all 0.2s linear;
+    justify-content: center;
+    align-items: center;
     transition: all 0.2s linear;
 }
+
+.f_social_icon a:hover {
+    color: #ffffff; /* Optional: Change color on hover */
+    background: #858da8; /* Optional: Change background on hover */
+}
+
+@media (max-width: 768px) {
+    .f_social_icon a {
+        width: 36px;
+        height: 36px;
+        font-size: 12px;
+        line-height: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    .f_social_icon a {
+        width: 30px;
+        height: 30px;
+        font-size: 10px;
+        line-height: 30px;
+    }
+}
+
 .ti-facebook:before {
     content: "\e741";
 }
