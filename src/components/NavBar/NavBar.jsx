@@ -1,60 +1,78 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "../NavBar/NavBar.css"
+import { FaBars } from "react-icons/fa";
 
-export default function Header() {
-    const [dropdownOpen, setDropdownOpen] = useState(false);
+export default function NavBar() {
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
-    const toggleDropdown = () => {
-        setDropdownOpen(!dropdownOpen);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
     };
 
-    return (
-        <nav className="navbar navbar-expand-lg bg-body-tertiary">
-            <div className="container-fluid">
-                <Link className="navbar-brand" to="/">FirmName</Link>
-                <button
-                    className="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                >
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li className="nav-item">
-                            <Link className="nav-link" aria-current="page" to="/">Home</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/about-us">About Us</Link>
-                        </li>
-                        <li className="nav-item dropdown">
-                            <a
-                                className="nav-link dropdown-toggle"
-                                href="#"
-                                role="button"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                            >
-                                Services
-                            </a>
-                            <ul className="dropdown-menu">
-                                <li><Link className="dropdown-item" to="/services/personal">Personal Service</Link></li>
-                                <li><Link className="dropdown-item" to="/services/business">Business Service</Link></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <div className="d-flex">
-                        <Link className="btn btn-outline-success contact-us-btn" to="/contact-us">
-                            Contact Us
-                        </Link>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    );
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const handleMouseEnter = () => {
+    setDropdownOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    setDropdownOpen(false);
+  };
+
+  return (
+    <nav className="bg-gray-200 p-4">
+      <div className="container mx-auto flex flex-wrap items-center justify-between">
+        <Link className="text-xl font-bold" to="/">
+          FirmName
+        </Link>
+        <button
+          className="block lg:hidden px-2 py-1 border rounded text-gray-700 border-gray-700"
+          type="button"
+          aria-expanded={dropdownOpen}
+          onClick={() => setDropdownOpen(!dropdownOpen)}
+          aria-label="Toggle navigation"
+        >
+          <FaBars className="h-6 w-6" />
+        </button>
+        <div className={`w-full lg:flex lg:items-center lg:w-auto ${dropdownOpen ? "block" : "hidden"}`}>
+          <ul className="lg:flex lg:flex-row lg:space-x-4 lg:mt-0">
+            <li className="nav-item">
+              <Link className="block lg:inline-block lg:mt-0 text-gray-700 hover:text-black" to="/">
+                Home
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="block lg:inline-block lg:mt-0 text-gray-700 hover:text-black" to="/about-us">
+                About Us
+              </Link>
+            </li>
+            <li className="relative">
+              <button
+                className="block lg:inline-block lg:mt-0 text-gray-700 hover:text-black"
+                type="button"
+                aria-expanded={dropdownOpen}
+              >
+                <Link className="block lg:inline-block lg:mt-0 text-gray-700 hover:text-black" to="/service">
+                  Services
+                </Link>
+              </button>
+            </li>
+          </ul>
+          <div className="lg:mt-0 lg:ml-4">
+            <Link className={`inline-block ${isMobile ? "px-1" : "px-4"} py-2 leading-none border rounded text-gray-700 border-gray-700 hover:border-transparent hover:text-white hover:bg-gray-700`} to="/contact-us">
+              Contact Us
+            </Link>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
 }

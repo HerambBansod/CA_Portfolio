@@ -1,0 +1,106 @@
+.contact {
+    padding: 100px 0;
+  }
+  
+  .contact .heading h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+  
+  .contact button.custom-btn {
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 15px;
+    background: #6BA6FF;
+    color: #ffffff;
+    border: none;
+  }
+  
+  .contact .content .info {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+  }
+  
+  .contact .content .info i {
+    flex: 0 0 auto;
+    margin-right: 20px;
+  }
+  
+  .contact .form-control {
+    padding: 20px;
+    background: #f9f9f9;
+  }
+  
+  .contact .heading h2 span {
+    color: #6BA6FF;
+  }
+  
+  #Space {
+    margin-bottom: 60px;
+  }
+  
+  .contact .form-control {
+    padding: 25px;
+    font-size: 13px;
+    margin-bottom: 10px;
+    background: #f9f9f9;
+    border: 0;
+    border-radius: 10px;
+  }
+  
+  .contact button.btn {
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 15px;
+    background: #6BA6FF;
+    color: #ffffff;
+  }
+  
+  .contact .title h3 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .contact .title p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #000000;
+    line-height: 1.6;
+    margin: 0 0 40px;
+  }
+  
+  .contact .content .info {
+    margin-top: 30px;
+  }
+  
+  .contact .content .info i {
+    font-size: 30px;
+    padding: 0;
+    margin: 0;
+    color: #6BA6FF;
+    margin-right: 20px;
+    text-align: center;
+    width: 20px;
+  }
+  
+  .contact .content .info h4 {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  
+  .contact .content .info h4 span {
+    font-size: 13px;
+    font-weight: 300;
+    color: #000000;
+  }
+  

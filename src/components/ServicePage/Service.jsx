@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { ArrowRight, CheckCircle2, BookOpen, BarChart3, Building2, Globe2, X } from 'lucide-react';
 import NavBar from '../NavBar/NavBar'
+import LandingVideo from '../Assets/LandingVideo.mp4';
+import Footer from '../Footer/Footer';
+ 
+
 const ServicesPage = () => {
   const [selectedService, setSelectedService] = useState(null);
 
@@ -259,18 +263,26 @@ const ServicesPage = () => {
       
       {/* CTA Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="bg-blue-600 rounded-2xl p-8 md:p-12 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-smooch-sans">
-            Ready to Get Started?
-          </h2>
-          <p className="text-blue-100 mb-8 text-lg font-jost">
-            Contact us today for a free consultation about your business needs
-          </p>
-          <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200 font-inter-tight">
-            Schedule Consultation
-          </button>
+    <div className="relative bg-blue-600 rounded-2xl p-8 md:p-12 text-center">
+        <video autoPlay muted loop className="absolute inset-0 w-full h-full object-cover z-0 rounded-lg grayscale-1">
+            <source src={LandingVideo} type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+        <div className="relative z-10   bg-opacity-50 rounded-2xl p-8 md:p-12 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-smooch-sans">
+                Ready to Get Started?
+            </h2>
+            <p className="text-white mb-8 text-lg font-jost">
+                Contact us today for a free consultation about your business needs
+            </p>
+            <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200 font-inter-tight">
+                Schedule Consultation
+            </button>
         </div>
-      </div>
+    </div>
+    <Footer/>
+</div>
+
 
       {/* Modal */}
       {selectedService && (
